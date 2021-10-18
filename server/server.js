@@ -37,7 +37,7 @@ db.once('open', () => {
 });
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/bookSearch', {
+    process.env.MONGODB_URI || 'mongodb://localhost/BOOKSEARCH', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
