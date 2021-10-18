@@ -4,7 +4,6 @@ const db = require('./config/connection');
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
-const mongoose = require("mongoose");
 //const routes = require('./routes');
 
 const app = express();
@@ -35,12 +34,3 @@ db.once('open', () => {
         console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
 });
-
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/BOOKSEARCH', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false
-    }
-);
